@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Our Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+      font-family: 'Lora', serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #f0f0f0;
+      text-align: center;
+      text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+      padding: 0 15px;
+    }
+    
+    h1:before, h1:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 1px;
+      background: rgba(218, 165, 32, 0.5);
+    }
+    
+    h1:before {
+      left: -20px;
+    }
+    
+    h1:after {
+      right: -20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    
+    .form-container {
+      width: 400px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: #131211;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5),
+                  0 0 1px rgba(218, 165, 32, 0.3);
+      position: relative;
+    }
+    
+    .form-container:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #d4af37, transparent);
+    }
+    
+    .quote {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-style: italic;
+      color: #d4af37; /* Refined gold shade */
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(218, 165, 32, 0.15);
+    }
+    
+    .author {
+      text-align: right;
+      color: #a38a28; /* Darker gold */
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+    
+    .form-container label {
+      color: #c6a93a; /* Refined gold shade for labels */
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 500;
+    }
+    
+    .form-container input,
+    .form-container textarea,
+    .form-container button {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #2a2a2a;
+      border-radius: 4px;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+    
+    .form-container input:focus,
+    .form-container textarea:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 5px rgba(218, 165, 32, 0.3);
+    }
+    
+    .form-container textarea {
+      resize: none;
+      height: 80px;
+    }
+    
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 8px 15px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      z-index: 100;
+    }
+    .back-btn a{
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .back-btn:hover {
+      background-color: rgba(218, 165, 32, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .back-btn i {
+      margin-right: 5px;
+    }
+    
+    .form-container button.submit-btn {
+      background-color: #d4af37;
+      color: #0e0e0e;
+      border: none;
+      padding: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .form-container button.submit-btn:hover {
+      background-color: #c6a93a;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(218, 165, 32, 0.3);
+    }
+    
+    .required-field::after {
+      content: "*";
+      color: #d4af37;
+      margin-left: 3px;
+    }
+    
+    .form-footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      padding-top: 15px;
+      border-top: 1px solid rgba(218, 165, 32, 0.15);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .form-container {
+        width: 90%;
+        padding: 20px;
+        margin: 50px auto 20px auto;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      .back-btn {
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html"><button type="button" class="back-btn"><i class="fas fa-arrow-left"></i> Back</button></a>
+  
+  <div class="form-container">
+    <div class="header">
+      <h1>Join Our Community</h1>
+    </div>
+    
+    <div class="quote">
+      "One never notices what has been done; one can only see what remains to be done."
+      <div class="author">– Marie Curie</div>
+    </div>
+    
+    <form>
+      <label for="name" class="required-field">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+      
+      <label for="email" class="required-field">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      
+      <label for="message">Message (Optional)</label>
+      <textarea id="message" placeholder="Write your message here"></textarea>
+      
+      <button type="submit" class="submit-btn">Join Now</button>
+    </form>
+    
+    <div class="form-footer">
+      By joining, you agree to our terms and privacy policy
+    </div>
+  </div>
+</body>
+</html>
